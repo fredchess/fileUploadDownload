@@ -19,3 +19,7 @@ Route::get('/', [HomeController::class, 'index'])->name('Home Page');
 Route::get('/files', [FichierController::class, 'list'])->name('files.list');
 Route::get('/files/add-a-file', [FichierController::class, 'add'])->name('files.add');
 Route::get('/files/{id}/details', [FichierController::class, 'details'])->name('files.details');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
