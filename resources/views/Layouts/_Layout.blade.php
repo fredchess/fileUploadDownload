@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{url('/')}}/libs/bootstrap/css/bootstrap.css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ route('Home Page') }}">GetFiles</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +26,5 @@
       </nav>
       @yield('content')
 </body>
-    <script src="{{url('/')}}/libs/js/jquery/jquery.js"></script>
-    <script src="{{url('/')}}/libs/bootstrap/js/bootstrap.js"></script>
+      <script src="{{ asset('js/app.js') }}" defer></script>
 </html>

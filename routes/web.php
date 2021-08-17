@@ -18,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('Home Page');
 Route::get('/files', [FichierController::class, 'list'])->name('files.list');
 Route::get('/files/add-a-file', [FichierController::class, 'add'])->name('files.add');
+Route::post('/files/add-a-file', [FichierController::class, 'store'])->name('files.store');
 Route::get('/files/{id}/details', [FichierController::class, 'details'])->name('files.details');
+Route::get('/files/{id}/download', [FichierController::class, 'downloadFile'])->name('file.download');
+Route::get('users/{id}', function ($id) {
+
+});
 
 Auth::routes();
 

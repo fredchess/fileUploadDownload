@@ -4,8 +4,15 @@
 
 @section('content')
     <div class="container">
-        <h1>File Details Page</h1>
-        <h2 style="background-color: green">{{ $file->name }}</h2>
+        <div class="file-image" style="text-align:center">
+            <p>
+                <h1>DOWNLOAD THE FILE</h1>
+            </p>
+            <img src="{{ Storage::url($file->associatedImagePath) }}" alt="">
+            <a href="{{ route('file.download', $file->id) }}">
+                <button class="btn-success">Download</button>
+            </a>
+        </div>
     </div>
 
-@endsection         
+@endsection

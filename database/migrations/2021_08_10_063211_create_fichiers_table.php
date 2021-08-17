@@ -17,8 +17,11 @@ class CreateFichiersTable extends Migration
             $table->id();
             $table->integer('type');
             $table->string('name');
-            $table->string('uploader')->default('Anonymous');
-            $table->decimal('size');
+            $table->string('associatedImagePath')->nullable();
+            $table->string('uploader')->default('Anonyme');
+            $table->decimal('size')->default(0);
+            $table->bigInteger('downloads')->default(0);
+            $table->string('path');
             $table->timestamps();
         });
     }

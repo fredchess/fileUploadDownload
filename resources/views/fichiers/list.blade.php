@@ -2,9 +2,12 @@
 
 @section('title', "All Files")
 
+{{-- @section('title-table', "All Files") --}}
+
 @section('content')
     <div class="container container-table">
         <h1>Latest Files</h1>
+
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
               <tr>
@@ -17,16 +20,15 @@
               </tr>
             </thead>
             <tbody>
-                <?php $cnt = 1 ?>
                 @foreach ($files as $file)
                 <tr>
-                    <th scope="row">{{ $cnt++ }}</th>
+                    <th scope="row"></th>
                     <td><a href="{{ route('files.details', $file->id) }}">{{ $file->name }}</a></td>
                     <td>{{ $file->type }}</td>
                     <td>{{ $file->uploader }}</td>
                     <td>{{ $file->created_at }}</td>
-                    <td></td>
-                  </tr>    
+                    <td>{{ $file->downloads }}</td>
+                  </tr>
                 @endforeach
             </tbody>
           </table>
